@@ -163,7 +163,7 @@
                                 </div>
                                 <span class="text-[10px] font-bold uppercase text-gray-400">View</span>
                             </a>
-                            <a href="{{ route('resume.download', $resume) }}"
+                            <a href="{{ route('resume.download', $resume) }}" target="_blank"
                                 class="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-gray-50 transition group/btn">
                                 <div
                                     class="p-2 rounded-lg bg-gray-100 text-gray-600 group-hover/btn:bg-emerald-600 group-hover/btn:text-white transition-colors">

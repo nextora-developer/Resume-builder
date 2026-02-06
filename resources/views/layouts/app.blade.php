@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>{{ config('app.name', 'Resume Builder') }}</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -57,11 +61,7 @@
                         <a href="{{ route('templates.index') }}" class="text-gray-600 hover:text-gray-900">
                             Templates
                         </a>
-                        {{-- @auth
-                            <a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-gray-900">
-                                Dashboard
-                            </a>
-                        @endauth --}}
+
                         <a href="#" class="text-gray-600 hover:text-gray-900">
                             Privacy
                         </a>

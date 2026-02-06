@@ -22,30 +22,55 @@
 
                     {{-- Mockup Display --}}
                     <div class="w-full md:w-1/2 group relative">
+                        {{-- Glow background --}}
                         <div
-                            class="absolute -inset-4 bg-gradient-to-tr from-gray-200 to-blue-50 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-500">
+                            class="absolute -inset-6 bg-gradient-to-tr from-slate-200 via-blue-100 to-indigo-100
+               rounded-[2.5rem] blur-3xl opacity-40 group-hover:opacity-80 transition duration-700">
                         </div>
 
+                        {{-- Browser frame --}}
                         <div
-                            class="relative rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
-                            <div class="flex items-center gap-1.5 px-4 py-3 border-b border-gray-100 bg-gray-50/50">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                                <div class="ml-4 h-4 w-32 bg-gray-200 rounded-full"></div>
+                            class="relative rounded-[1.75rem] border border-slate-200 bg-white
+               overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.25)]
+               transition-transform duration-500 group-hover:-translate-y-3">
+
+                            {{-- Browser top bar --}}
+                            <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-200 bg-slate-50">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                </div>
+
+                                {{-- Fake address bar --}}
+                                <div
+                                    class="ml-4 flex-1 h-7 rounded-full bg-white border border-slate-200
+                       flex items-center px-3 text-[11px] text-slate-500 font-mono truncate">
+                                    https://resume.extech/templates/{{ $t['slug'] }}
+                                </div>
                             </div>
 
-                            <div class="relative bg-gray-50 aspect-[3/4] overflow-hidden">
-                                <iframe src="{{ route('templates.preview', $t['slug']) }}"
-                                    class="w-full h-full scale-[0.75] origin-top-left pointer-events-none"
-                                    style="width: 133.33%; height: 133.33%;"></iframe>
+                            {{-- Preview area --}}
+                            <div class="relative bg-slate-100 aspect-[3/4] overflow-hidden">
 
+                                <iframe
+                                    src="{{ route('templates.preview', ['slug' => $t['slug'], 'mode' => 'preview']) }}"
+                                    class="absolute inset-0 w-full h-full scale-[0.75] origin-top-left pointer-events-none"
+                                    style="width:133.33%; height:133.33%;">
+                                </iframe>
+
+                                {{-- Hover overlay --}}
                                 <div
-                                    class="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/5 transition-colors duration-300">
+                                    class="absolute inset-0 bg-gradient-to-t
+                       from-black/10 via-black/0 to-black/0
+                       opacity-0 group-hover:opacity-100 transition duration-300">
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
+
 
                     {{-- Text Content --}}
                     <div class="w-full md:w-1/2">

@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Resume extends Model
 {
-    protected $fillable = ['user_id', 'title', 'template', 'data'];
+    protected $fillable = ['uuid', 'user_id', 'title', 'template', 'data'];
 
     protected $casts = [
         'data' => 'array',
